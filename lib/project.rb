@@ -27,5 +27,31 @@ def ==(project_to_compare)
   self.title.downcase.eql?(project_to_compare.title.downcase)
 end
 
+def self.find(id)
+  project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
+  title = project.fetch("title")
+  id = project.fetch("id")
+  Project.new({:title => title, :d => id})
+end
+
+def update(new_attributes)
+  title = new_attributes.fetch(:title)
+  DB.exec("UPDATE projects SET title = '#{title} WHERE id = '#{id};")
+end
+
+def volunteers
+  Volunteer.find_by_project(self.id)
+end
+
+def delete
+  DB.exec("DELETE FROM projects WHERE id =#{@id};")
+  DB.exec("DELETE FROM volunteers WHERE project_id = #{@id};")
+end
+
+def self.clear
+  DB.exec("DELETE FROM projects *;")
+
+end
+
 
 end

@@ -31,5 +31,13 @@ def ==(volunteer_to_compare)
   (self.name.downcase.eql?(volunteer_to_compare.name.downcase))&&(self.project_id.to_i.eql?(volunteer_to_compare.project_id.to_i))
 end
 
+def self.find(id)
+  volunteer = DB.exec("SELECT * FROM volunteers WHERE id = #{id};").first
+  name = volunteer.fetch("name")
+  project_id = volunteer.fetch("project_id")
+  id = volunteer.fetch("id")
+  Volunteer.new({:name => name, :project_id => project_id, :id => id})
+end
+
 
 end

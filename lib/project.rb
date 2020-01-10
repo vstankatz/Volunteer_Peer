@@ -31,7 +31,7 @@ def self.find(id)
   project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
   title = project.fetch("title")
   id = project.fetch("id")
-  Project.new({:title => title, :d => id})
+  Project.new({:title => title, :id => id})
 end
 
 def update(new_attributes)

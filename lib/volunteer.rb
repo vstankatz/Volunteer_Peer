@@ -51,4 +51,8 @@ def self.find_by_project(id)
   volunteers
 end
 
+def self.clear
+  DB.exec("DELETE FROM volunteers *;")
+end
+
 end

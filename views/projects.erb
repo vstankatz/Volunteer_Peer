@@ -1,0 +1,10 @@
+<% if @projects.any? %>
+<h3>Current Projects:</h3>
+<ul>
+  <% @projects.each do |project| %>
+  <li><a href="/home/projects/<%=project.id%>"><%=project.name%></a></li>
+  <% end %>
+</ul>
+<% else %>
+<h3>There are currently no projects to display, don't fret! I'm sure a project coordinator will add one soon.</h3>
+<% end %>

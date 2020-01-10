@@ -18,7 +18,7 @@
 #     expect(page).to have_content('Teaching Kids to Code')
 #   end
 # end
-#
+# #
 # # A user should be able to click on a project to see its detail. The detail page includes a form where the project can be updated. When the form is submitted, the user can be directed to either the home page or that project's detail page. (The test will work for either.)
 #
 # describe 'the project update path', {:type => :feature} do

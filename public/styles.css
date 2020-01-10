@@ -1,0 +1,21 @@
+body {
+  text-align: center;
+}
+
+.box_holder {
+  margin-right: 10%;
+  margin-left: 10%;
+}
+
+.col-sm-4 {
+  margin: 20px 20px 20px 20px;
+  min-width: 200px;
+  max-width: 200px;
+  height: 200px;
+  padding: 60px 20px 20px 20px;
+  border-color: blue;
+  border-width: medium;
+  border-style: groove;
+  background-color: #ff6666;
+  color: white;
+}

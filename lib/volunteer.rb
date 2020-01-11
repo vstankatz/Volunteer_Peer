@@ -49,6 +49,11 @@ def self.find_by_project(id)
   volunteers
 end
 
+def update(new_attributes)
+@name = new_attributes.fetch(:name)
+DB.exec("UPDATE volunteers SET name = '#{@name}' WHERE id = #{@id}")
+end
+
 def delete
   DB.exec("DELETE FROM volunteers WHERE id =#{@id};")
 end

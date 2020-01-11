@@ -61,10 +61,16 @@ get('/home/admin/:proj_id') do
 erb(:edit_project)
 end
 
+delete('/home/admin/:proj_id') do
+@project = Project.find(params[:proj_id])
+@project.delete
+erb(:deleted_project)
+end
+
 post('/home/admin/:proj_id/volunteer') do
   @project = Project.find(params[:proj_id])
-  volunteer = Volunteer.new({:name => params[:volunteer_name], :project_id => @project.id, :id => nil})
-  volunteer.save
+  @volunteer = Volunteer.new({:name => params[:volunteer_name], :project_id => @project.id, :id => nil})
+  @volunteer.save
   erb(:thanks)
 end
 
@@ -80,6 +86,20 @@ get('/home/admin/:proj_id/volunteer/:id') do
   @volunteer = Volunteer.find(params[:id])
   erb(:thanks)
 end
+
+get('/home/admin/:proj_id/volunteer/:id/edit') do
+  @project = Project.find(params[:proj_id])
+  @volunteer = Volunteer.find(params[:id])
+  erb(:edit_volunteer)
+end
+
+patch('/home/admin/:proj_id/volunteer/:id') do
+  @project = Project.find(params[:proj_id])
+  @volunteer = Volunteer.find(params[:id])
+  @volunteer.update({:name => params[:volunteer_name]})
+  erb(:admin_project)
+end
+
 
 delete('/home/admin/:proj_id/volunteer/:id') do
   @project = Project.find(params[:proj_id])

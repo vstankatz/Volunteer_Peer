@@ -1,0 +1,8 @@
+<form action="/home/admin/<%=@project.id%>/volunteer/<%=@volunteer.id%>" method="post">
+  <input type="hidden" name="_method" value="patch">
+
+  <label for="volunteer_name"></label>
+  <input type="text" name="volunteer_name">
+  <br>
+  <button type="submit" name="button">Edit Volunteer</button>
+</form>

@@ -1,0 +1,12 @@
+<% if @projects.length >=1 %>
+<h3>Here are the projects that meet your search criteria:</h3>
+<ul>
+  <% @projects.each do |project| %>
+  <li><a href="/home/projects/<%=project.id%>"><%=project.title%></a></li>
+  <% end %>
+</ul>
+<% else %>
+<h3>There are currently no projects that meet your search criteria. Check out the main <b><a href="/home/projects">project list</a></b> to see if anything else works for you!</h3>
+<% end %>
+<br>
+<a href="/home">Go Back to Home</a>

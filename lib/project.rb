@@ -27,6 +27,17 @@ def ==(project_to_compare)
   self.title.downcase.eql?(project_to_compare.title.downcase)
 end
 
+def self.check(input)
+  search_results = []
+  results = DB.exec("SELECT * FROM projects WHERE title ILIKE '%#{input}%'")
+  results.each do |result|
+    title = result.fetch("title")
+    id = result.fetch("id").to_i
+    search_results.push(Project.new({:title => title, :id => id}))
+  end
+  search_results
+end
+
 def self.find(id)
   project = DB.exec("SELECT * FROM projects WHERE id = #{id};").first
   title = project.fetch("title")
@@ -50,19 +61,6 @@ end
 
 def self.clear
   DB.exec("DELETE FROM projects *;")
-
 end
-
-def self.search(input)
-  search_results = []
-  results = DB.exec("SELECT title FROM projects WHERE title ILIKE '%#{input}%'")
-  results.each do |result|
-    title = result.fetch("title")
-    id = DB.exec("SELECT id FROM projects where title = '#{title}'")
-    search_results.push(Project.new({:title => title, :id => id}))
-  end
-  search_results
-end
-
 
 end

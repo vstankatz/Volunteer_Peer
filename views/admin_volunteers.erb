@@ -1,0 +1,18 @@
+<% if @projects.any? %>
+<h1>Volunteer Master List</h1>
+<% @projects.each do |project| %>
+<% if project.volunteers.length >= 1 %>
+<h2><u><%=project.title%></u></h2>
+<ul>
+  <% project.volunteers.each do |p| %>
+  <li><a href="/home/admin/<%=project.id%>/volunteer/<%=p.id%>"><%=p.name%></a></li>
+  <% end %>
+</ul>
+<% end %>
+<% end %>
+<% else %>
+<h3>There are currently no volunteers to display.</h3>
+<% end %>
+
+<br>
+<a href="/home">Go Back to Home</a>

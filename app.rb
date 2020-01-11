@@ -51,10 +51,17 @@ get('/home/admin/:proj_id/volunteer') do
   erb(:admin_project)
 end
 
-get('/home/volunteer') do
+get('/home/search') do
+  @projects = Project.check(params[:searched])
+  erb(:searched)
+end
+
+get('/home/admin/volunteer') do
+  @projects = Project.all
   @volunteers = Volunteer.all
   erb(:admin_volunteers)
 end
+
 
 get('/home/admin/:proj_id/volunteer/new') do
 @project = Project.find(params[:proj_id])

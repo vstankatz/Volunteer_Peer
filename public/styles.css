@@ -1,10 +1,26 @@
 body {
   text-align: center;
+  background-color: #c1c1c1;
+}
+
+.jumbotron {
+  background-color: #706b94;
+  color: white;
+  background-position: 50% 50%;
+  margin-bottom: 70px;
+}
+
+.greeting {
+  display: inline-block;
+  padding: 15px;
+  background-color: #8a6897;
 }
 
 .box_holder {
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: auto;
+  margin-left: auto;
+  height: 250px;
+  display: inline-block;
 }
 
 ul {
@@ -17,23 +33,63 @@ ul {
 }
 
 div input {
-  width: 160px;
+  width: 250px;
   object-position: center;
+  color: black;
 }
 
 div button {
   background-color: darkblue;
 }
 
-.col-sm-4 {
+.volunteers {
+  background-image: url("/coordinators.jpg");
+  background-position: block;
+  background-size: 200px 200px;
+  min-height: 200px;
+  background-repeat: no-repeat;
+
+}
+
+.projects {
+  background-image: url("/volunteers.jpg");
+  background-position: block;
+  background-size: 200px 200px;
+  min-height: 200px;
+  background-repeat: no-repeat;
+}
+
+.big_button {
   margin: 20px 20px 20px 20px;
   min-width: 200px;
   max-width: 200px;
+  height: 200px;
+  padding: 120px 20px 20px 20px;
+  border-color: blue;
+  border-width: medium;
+  border-style: groove;
+  background-color: #81b9d8;
+  color: white;
+}
+
+div.big_button label span {
+  width: 200px;
+  background-color: #707070;
+  height: 200px;
+  font-size: 15px;
+  color: white;
+
+}
+
+.search_panel {
+  margin: 20px 20px 20px 20px;
+  min-width: 400px;
+  max-width: 400px;
   height: 200px;
   padding: 60px 20px 20px 20px;
   border-color: blue;
   border-width: medium;
   border-style: groove;
-  background-color: #ff6666;
+  background-color: #81b9d8;
   color: white;
 }

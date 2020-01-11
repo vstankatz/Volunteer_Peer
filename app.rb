@@ -25,6 +25,11 @@ get('/home/projects') do
 end
 #User view of project list
 
+get('/home/projects/:proj_id') do
+  @project = Project.find(params[:proj_id])
+  erb(:project)
+end
+
 get('/home/admin') do
   @projects = Project.all
   erb(:admin_projects)

@@ -2,7 +2,7 @@
 <h3>Current Projects:</h3>
 <ul>
   <% @projects.each do |project| %>
-  <li><a href="/home/projects/<%=project.id%>"><%=project.name%></a></li>
+  <li><a href="/home/projects/<%=project.id%>"><%=project.title%></a></li>
   <% end %>
 </ul>
 <% else %>

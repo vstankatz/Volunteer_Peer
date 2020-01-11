@@ -19,3 +19,12 @@ body {
   background-color: #ff6666;
   color: white;
 }
+
+ul {
+  display: inline-block;
+  list-style-position: inside;
+  text-align: center;
+  padding-left: 0px;
+  font-size: 20px;
+  padding-inline-start: 5px;
+}

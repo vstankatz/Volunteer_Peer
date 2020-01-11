@@ -1,0 +1,17 @@
+<h3>Here is the volunteer sign-up for<b> <%=@project.title%></b></h3>
+<br>
+<% if @project.volunteers.length >= 1 %>
+<h4>Current Volunteers<i>(and future friends!)</i>:</h4>
+<ul>
+  <%  @project.volunteers.each do |volunteer| %>
+  <li><%=volunteer.name%></li>
+</ul>
+<%end%>
+<%else%>
+<h4>Doesn't look like there are any volunteers yet, <b>well done on being the first!</b> click below to sign-up!</h4>
+<%end%>
+
+<a href="/home/admin/<%=@project.id%>/volunteer/new">Sign-Up!</a>
+<br><br>
+<a href="/home">Go Back To Home Page</a>
+<br><br>

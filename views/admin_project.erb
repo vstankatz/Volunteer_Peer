@@ -10,13 +10,13 @@
 <%else%>
 <h4>Doesn't look like you have any volunteers yet, get the word out about your volunteer opportunity or recruit some friends to volunteer with you!</h4>
 <%end%>
-
+<br>
 <a href="/home/admin/<%=@project.id%>/volunteer/new">Add a Volunteer</a>
 <br><br>
 <a href="/home">Go Back To Home Page</a>
 <br><br>
 <a href="/home/admin/<%=@project.id%>"><button type="button" name="button">Edit Project</button></a>
-
+<br>
 <form  action="/home/admin/<%=@project.id%>" method="post">
   <input type="hidden" name="_method" value="delete">
   <button type="submit" name="button">Delete Project</button>

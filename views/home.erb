@@ -1,7 +1,7 @@
 <h2>Welcome to VolunTeamwork, a place for those looking to work with friends, or make friends while you work, while helping out those in your community.</h2>
 <hr>
 <br><br><br>
-<h4>How may we help you today?</h4>
+<h3>How may we help you today?</h3>
 <div class="box_holder">
 
   <a href="/home/projects">
@@ -10,7 +10,12 @@
 </div>
 </a>
 <div class="big_button col-sm-4">
-  <span>Search for a Specific Project</span>
+  <form class="" action="/home/projects/search" method="get">
+    <span>Search for a Specific Project</span>
+    <input type="text" name="search">
+    <br><br>
+    <button type="submit" name="button">Search</button>
+  </form>
 </div>
 <a href="/home/admin">
 <div class="big_button col-sm-4">

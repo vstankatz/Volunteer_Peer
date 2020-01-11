@@ -3,7 +3,7 @@ class Volunteer
   attr_reader :id
 
   def initialize(attributes)
-    @name = attributes.fetch(:name)
+    @name = attributes.fetch(:name).downcase.capitalize!
     @project_id = attributes.fetch(:project_id)
     @id = attributes.fetch(:id)
   end

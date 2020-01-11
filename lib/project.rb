@@ -3,7 +3,7 @@ class Project
   attr_reader :id
 
   def initialize(attributes)
-    @title = attributes.fetch(:title)
+    @title = attributes.fetch(:title).downcase.split(" ").map {|a| a.capitalize}.join(" ")
     @id = attributes.fetch(:id)
   end
 
@@ -51,6 +51,17 @@ end
 def self.clear
   DB.exec("DELETE FROM projects *;")
 
+end
+
+def self.search(input)
+  search_results = []
+  results = DB.exec("SELECT title FROM projects WHERE title ILIKE '%#{input}%'")
+  results.each do |result|
+    title = result.fetch("title")
+    id = DB.exec("SELECT id FROM projects where title = '#{title}'")
+    search_results.push(Project.new({:title => title, :id => id}))
+  end
+  search_results
 end
 
 

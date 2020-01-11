@@ -13,9 +13,9 @@ set(:show_exceptions, false)
 describe 'the project creation path', {:type => :feature} do
   it 'takes the user to the homepage where they can create a project' do
     visit '/home/admin/new'
-    fill_in('proj_title', :with => 'Teaching Kids to Code')
+    fill_in('proj_title', :with => 'Teaching Kids To Code')
     click_button('Add!')
-    expect(page).to have_content('Teaching Kids to Code')
+    expect(page).to have_content('Teaching Kids To Code')
   end
 end
 
@@ -23,14 +23,14 @@ end
 
 describe 'the project update path', {:type => :feature} do
   it 'allows a user to change the name of the project' do
-    test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+    test_project = Project.new({:title => 'Teaching Kids To Code', :id => nil})
     test_project.save
     visit '/home/admin'
-    click_link('Teaching Kids to Code')
+    click_link('Teaching Kids To Code')
     click_link('Edit Project')
-    fill_in('proj_title', :with => 'Teaching Ruby to Kids')
+    fill_in('proj_title', :with => 'Teaching Ruby To Kids')
     click_button('Edit Project')
-    expect(page).to have_content('Teaching Ruby to Kids')
+    expect(page).to have_content('Teaching Ruby To Kids')
   end
 end
 
@@ -38,13 +38,13 @@ end
 
 describe 'the project delete path', {:type => :feature} do
   it 'allows a user to delete a project' do
-    test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+    test_project = Project.new({:title => 'Teaching Kids To Code', :id => nil})
     test_project.save
     id = test_project.id
     visit "/home/admin/#{test_project.id}/volunteer"
     click_button('Delete Project')
     visit '/home/admin'
-    expect(page).not_to have_content("Teaching Kids to Code")
+    expect(page).not_to have_content("Teaching Kids To Code")
   end
 end
 
@@ -52,7 +52,7 @@ end
 
 describe 'the volunteer detail page path', {:type => :feature} do
   it 'shows a volunteer detail page' do
-    test_project = Project.new({:title => 'Teaching Kids to Code', :id => nil})
+    test_project = Project.new({:title => 'Teaching Kids To Code', :id => nil})
     test_project.save
     project_id = test_project.id.to_i
     test_volunteer = Volunteer.new({:name => 'Jasmine', :project_id => project_id, :id => nil})

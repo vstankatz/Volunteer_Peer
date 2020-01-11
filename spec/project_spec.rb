@@ -1,3 +1,4 @@
+require 'spec_helper'
 describe Project do
 
   describe '#title' do
@@ -102,4 +103,5 @@ describe Project do
       expect(Project.all).to eq []
     end
   end
+
 end

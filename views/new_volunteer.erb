@@ -1,0 +1,10 @@
+<h2>Sign up for <b><%=@project.title%></b></h2>
+
+<form action="/home/admin/<%=@project.id%>/volunteer" method="post">
+
+
+  <label for="volunteer_name"></label>
+  <input type="text" name="volunteer_name">
+  <br>
+  <button type="submit" name="button">Add!</button>
+</form>

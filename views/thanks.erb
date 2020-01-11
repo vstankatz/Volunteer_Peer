@@ -1,0 +1,13 @@
+<h1>Thanks for volunteering <%=@volunteer.name%>!</h1>
+<h2>With your help <%=@project.title%> will be a better, brighter, and more helpful volunteer opportunity for all!</h2>
+<h4>Please make sure all information is correct and edit if necessary</h4>
+
+<p>Volunteer Name: <%=@volunteer.name%> <br>
+  Volunteer Program: <%=@project.title%> </p>
+  <br>
+  <a href="/home/admin/<%=@project.id%>/volunteer/<%=@volunteer.id%>/edit">Edit Volunteer Name</a>
+<br><br>
+  <form class="" action="index.html" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button type="submit" name="button">Delete Volunteer from Project</button>
+  </form>

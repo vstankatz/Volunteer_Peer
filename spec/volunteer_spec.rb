@@ -57,6 +57,17 @@ describe Volunteer do
     end
   end
 
+  describe '#delete' do
+    it 'deletes a volunteer from database' do
+      volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})
+      volunteer1.save
+      volunteer2 = Volunteer.new({:name => 'Joe', :project_id => 1, :id => nil})
+      volunteer2.save
+      volunteer2.delete
+      expect(Volunteer.all).to eq [volunteer1]
+    end
+  end
+
   describe '.clear' do
     it 'clears out volunteer database' do
       volunteer1 = Volunteer.new({:name => 'Jane', :project_id => 1, :id => nil})

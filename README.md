@@ -17,23 +17,26 @@ _This program was designed to allow a non-profit employee to view, update, and d
 |The program should allow the user to delete a project. |Delete "Helping the Elderly" |Project List: *empty*|
 |The program should allow the user to add a volunteer.| "Veronica" |Volunteer List: Veronica|
 |The program should allow the user to add a volunteer to a project.| Add "Veronica" to "Helping the Elderly" |Helping the Elderly: Veronica|
-
-
-THESE SPECS WERENT REQUIRED!!!
-<!-- |The program should allow the user to edit a volunteer.| Edit "Veronica" to "The name of a Cartoon Network dog, last name Cowardly" |Courage: "The name of a Cartoon Network dog, last name Cowardly"|
-|The program should allow the user to delete a volunteer.| Delete "The name of a Cartoon Network dog, last name Cowardly"| Courage Definitions: *empty*| -->
+|The program should allow the user to edit a volunteer.| Edit "Veronica" to "Alex" |Volunteer List: Alex|
+|The program should allow the user to delete a volunteer.| Delete "Alex"| Volunteer List: *empty*|
 
 
 ## Setup-Installation Requirements
 
-* _Go to https://github.com/vstankatz/Dont_Anagram-A_Ton_Grandma_
+* _Go to https://github.com/vstankatz/Volunteer_Peer__
 * _Clone the GitHub repository._
 * _In your terminal/command line go into the folder that was cloned and run the following in order:_
-  >  1. "bundle install"
-  >  2. "chmod +x interface.rb"
-  >  3. "./interface.rb"
-* _Read the prompt printed on your terminal and enter your comparison words or phrases_
-* _The terminal will then display the result of the anagram and antigram comparison, if you'd like to try again press "y" and repeat, if finished press "n"._
+<br>
+Windows Instructions:
+
+  >  1. createdb -w -U postgres volunteer_tracker
+  >  2. psql -U postgres volunteer_tracker < database_backup.sql
+  >  3. createdb -U postgres -T volunteer_tracker_test
+
+  <i>If using Mac simply remove the '-w' and '-U postgres'</i>
+
+* _Once the database is properly installed run 'ruby app.rb' and input 'localhost:' into your browser with the port given by your terminal._
+* _Use the site as desired!_
 
 
 
